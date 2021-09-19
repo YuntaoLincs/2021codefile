@@ -3,4 +3,6 @@
 //use each of the characters 'c', 'a', 't', 'd', 'o', 'g' exactly once.
 //How many strings does your program generate?
 
-
+int main(){
+    char strings[] = scanf
+}
