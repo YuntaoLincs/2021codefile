@@ -51,28 +51,55 @@ keyword: client-server, socket, IP address, port number, transport-layer protoco
     1. Connection established too much and need to save TCP buffers and variables which place a heavy burden on Web server.
     2. High delay 
 
+
     Q1. 描述RTT(round-trip time)以及非持久性连接的时延
-    Q2. 
+        the response time of requesting a HTML file: two RTT + propagation time
 10. Persistent HTTP
 
 11. HTTP message format
-    1. request message(需要完善)
+    1. request message
         1. request line: method field, URL field, HTTP version field
-        2. header line: 
-    2. Response message:(需要完善)
-        1. status line
+        (first line)
+            > GET / kurose_ross/interactive/index.php HTTP/1.1
+        2. header line:  
+            > Host: gaia.cs.umass.edu
+            > Connection: close
+            > User-agent:
+            > Accept-language:
+        3. Blank line
+        4. Entity body(when use GET method, such place should be empty. Only use POST method )
+            using the GET method may put the entity body into the URL
+    2. Response message:
+        1. status line: 
+            1. protocol version
+            2. status code
+            3. corresponding status message
         2. header line
+            1. Date: the time when you get the response message
+            2. Server
+            3. Last-Modified: the time when object was created or modified
+            4. Content-Length
+            5. Content-Type
         3. entity body
-    3. state code
+    3. supply material: 
+        method:
+        1. GET
+        2. POST
+        3. HEAD
+        4. PUT
+        5. DELETE
+        state code
         1. 200 ok
         2. 301 Moved permanently
         3. 400 bad request
         4. 404 not found
+        5. 408 time out
         5. 505 http version not supported
     4. Cookie 
-    5. cache
+
+    5. Web cache
+        
     6. HTTP 2.0(需要从英文版书籍中完善)
-Q1. 看相关视频和材料，了解response message 的格式
 12. DNS(domain name system)
     1. main task: translate hostnames to IP addresses
     2. Definition: 
