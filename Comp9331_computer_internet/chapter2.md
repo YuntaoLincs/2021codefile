@@ -141,8 +141,9 @@ keyword: client-server, socket, IP address, port number, transport-layer protoco
                 4. MX
             2. resource record(RR)
                 TTL( time to live of resource record)
-            3. DNS message format
-            4. 
+            2. DNS message format
+                (nslookup 待完善)
+            3. 
     
 14. Socket programming with UDP(待完善)
 15. Socket programming with TCP(待完善)
