@@ -65,6 +65,7 @@ keyword: client-server, socket, IP address, port number, transport-layer protoco
             > Host: gaia.cs.umass.edu
             > Connection: close
             > User-agent:
+
             > Accept-language:
         3. Blank line
         4. Entity body(when use GET method, such place should be empty. Only use POST method )
@@ -82,13 +83,17 @@ keyword: client-server, socket, IP address, port number, transport-layer protoco
             5. Content-Type
         3. entity body
     3. supply material: 
-        method:
+
+        > method:
+
         1. GET
         2. POST
         3. HEAD
         4. PUT
         5. DELETE
-        state code
+        
+        > state code
+
         1. 200 ok
         2. 301 Moved permanently
         3. 400 bad request
@@ -120,13 +125,24 @@ keyword: client-server, socket, IP address, port number, transport-layer protoco
         4. Maintenance
     2. distributed, hierarchical database
         1. root DNS servers, top-level domain(TLD), authoritative DNS servers, local DNS server
-        2. process of querying DNS message(待完善)
-        3. DNS caching(待完善)
+        2. process of querying DNS message
+        3. DNS caching
         4. DNS record
-            1. resource record(RR)(待完善)
+            > (Name, Value, Type, TTL)
+            1. Type:
+                1. A
+                    Name  = host name
+                    Vale = IP address
+                2. NS 
+                    Name = Domain name
+                    Vale = host name of authoritative DNS server 
+                3. CNAME
+                    Value = canonical hostname for allas hostname
+                4. MX
+            2. resource record(RR)
                 TTL( time to live of resource record)
-            2. DNS message format(待完善)
-            3. 
+            3. DNS message format
+            4. 
     
 14. Socket programming with UDP(待完善)
 15. Socket programming with TCP(待完善)
