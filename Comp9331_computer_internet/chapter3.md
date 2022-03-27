@@ -47,7 +47,30 @@ keyword:
     1. Efficiency: U = $\frac{N*L/R}{RTT+L/R}$
     2. method:
         1. GO back N
+            1. N is the window size (k is the number of bits in packet sequence, N = 2^k - 1)
+            2. one timer
+            3. no buffer, no receiver window
         2. selective repeat
+            1. each packet should have a timer
+            2. should have buffer
+            3. sender window size <= 1/2 of sequence number space
+                1. receiver can not judge whether it is the new packet or it is the retransmisssion
 ### TCP
 
-1. 
+32-bit sequence number field
+1. segment structure
+    1. source port number + destination port number (each 16 bits)
+    2. sequence number field ( 32 bits)
+        1. byte-stream number of the first byte in the segment
+    3. acknowledgment number field ( 32 bits )
+        1. the sequence number of the next expecting byte 
+        2. provide the cumulative acknowledgment ( GBN )
+        3. in practice, method of selective repeat is usual
+    4. checksum ( 16 bits) + urgent data pointer
+    5. header length( 4 bits ) and flags + receiver window field( 16 bits) 
+    ( minimize header: 5*32/8 = 20B)
+
+    MSS ( maximum segment size ) = 1460B = MTU (maximum transmission unit = 1500) - IP header(20) - TCP header(20)
+
+2. Round-trip time estimation and timeout
+    1. 
